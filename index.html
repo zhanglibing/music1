@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Music</title>
+    <script src="js/jquery.js"></script>
+    <script src="js/index.js"></script>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+<audio controls id="audio" src="music/阴天.mp3"></audio>
+<div class="mask">
+    <canvas id='canvas' width="800" height="350"></canvas>
+</div>
+<div class="box">
+    <div class="top">
+        <div class="info-detail">
+            <div class="left"></div>
+            <div class="right">
+                暂无信息
+            </div>
+        </div>
+        <div class="geci"></div>
+    </div>
+    <div class="bottom">
+        <div class="bottom-content">
+            <div class="bofang">
+                <div class="left"></div>
+                <div class="play"></div>
+                <div class="right"></div>
+            </div>
+            <div class="info"><a href="javascript:;"></a></div>
+            <div class="time">
+                <div class="time-top">
+                    <span>阴天 -- 莫文蔚</span>
+                </div>
+                <div class="time-bottom">
+                    <div class="time-left">
+                        <span class="time-current">00:00</span>
+                        <span>/</span>
+                        <span class="time-all">00:00</span>
+                    </div>
+                    <div class="time-right">
+                        <div class="run"></div>
+                        <div class="load"></div>
+                        <div class="move"></div>
+                        <div class="current-time">00:00</div>
+                    </div>
+                </div>
+            </div>
+            <div class="volume">
+                <div class="volume-logo"></div>
+                <div class="volume-current">
+                    <div class="run"></div>
+                    <div class="move"></div>
+                </div>
+            </div>
+            <div id="style" class="style"></div>
+            <div class="list-button"></div>
+            <div class="list">
+               <div class="list-top">
+                   <span class="listall">播放列表</span>
+                   <div class="list-top-right">
+                       <div class="collect">
+                           <span class="img"></span>
+                           <span class="col-all">收藏所有</span>
+                       </div>
+                       <div class="del">
+                           <span class="img"></span>
+                           <span class="del-all">清除所有</span>
+                       </div>
+                   </div>
+               </div>
+               <div class="list-bottom">
+                   <ul>
+                       <!--<li>-->
+                           <!--<div class="animation">-->
+                               <!--<div></div>-->
+                               <!--<div></div>-->
+                               <!--<div></div>-->
+                               <!--<div></div>-->
+                           <!--</div>-->
+                           <!--<div class="songs">幸福的错觉</div>-->
+                           <!--<div class="function">-->
+                               <!--<div class="download"></div>-->
+                               <!--<div class="share"></div>-->
+                               <!--<div class="collect"></div>-->
+                           <!--</div>-->
+                           <!--<div class="name">任重</div>-->
+                           <!--<div class="alltime">00:00</div>-->
+                           <!--<div class="delone"></div>-->
+                       <!--</li>-->
+                   </ul>
+               </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="js/main.js"></script>
+</html>

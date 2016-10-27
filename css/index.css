@@ -1,0 +1,962 @@
+@charset "UTF-8";
+.d-1 {
+  width: 8.33333%;
+}
+
+.d-2 {
+  width: 16.66667%;
+}
+
+.d-3 {
+  width: 25%;
+}
+
+.d-4 {
+  width: 33.33333%;
+}
+
+.d-5 {
+  width: 41.66667%;
+}
+
+.d-6 {
+  width: 50%;
+}
+
+.d-7 {
+  width: 58.33333%;
+}
+
+.d-8 {
+  width: 66.66667%;
+}
+
+.d-9 {
+  width: 75%;
+}
+
+.d-10 {
+  width: 83.33333%;
+}
+
+.d-11 {
+  width: 91.66667%;
+}
+
+.d-12 {
+  width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .m-1 {
+    width: 8.33333%;
+  }
+  .m-2 {
+    width: 16.66667%;
+  }
+  .m-3 {
+    width: 25%;
+  }
+  .m-4 {
+    width: 33.33333%;
+  }
+  .m-5 {
+    width: 41.66667%;
+  }
+  .m-6 {
+    width: 50%;
+  }
+  .m-7 {
+    width: 58.33333%;
+  }
+  .m-8 {
+    width: 66.66667%;
+  }
+  .m-9 {
+    width: 75%;
+  }
+  .m-10 {
+    width: 83.33333%;
+  }
+  .m-11 {
+    width: 91.66667%;
+  }
+  .m-12 {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .s-1 {
+    width: 8.33333%;
+  }
+  .s-2 {
+    width: 16.66667%;
+  }
+  .s-3 {
+    width: 25%;
+  }
+  .s-4 {
+    width: 33.33333%;
+  }
+  .s-5 {
+    width: 41.66667%;
+  }
+  .s-6 {
+    width: 50%;
+  }
+  .s-7 {
+    width: 58.33333%;
+  }
+  .s-8 {
+    width: 66.66667%;
+  }
+  .s-9 {
+    width: 75%;
+  }
+  .s-10 {
+    width: 83.33333%;
+  }
+  .s-11 {
+    width: 91.66667%;
+  }
+  .s-12 {
+    width: 100%;
+  }
+}
+
+/**
+ * Yo框架动画解决方案
+ * Yo内置了超过60种动画形态，不同的动画可以任意组合
+ */
+.ani {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.ani.infinite {
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+
+/**
+ * @module rotate
+ * @description 定义旋转动画
+ * @method rotate
+ */
+@-webkit-keyframes rotate {
+  from {
+    -webkit-transform: rotatez(0deg);
+  }
+  to {
+    -webkit-transform: rotatez(360deg);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.ani.rotate {
+  -webkit-animation-name: rotate;
+  animation-name: rotate;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+body {
+  text-align: center;
+  color: #fff;
+}
+
+audio {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  width: 0;
+  height: 0;
+}
+
+.mask {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  margin: auto;
+  color: #fff;
+  background-image: url("../img/2.jpg");
+  z-index: 1;
+}
+
+.mask #canvas {
+  position: absolute;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  bottom: 70px;
+  text-align: center;
+  color: #fff;
+}
+
+.mask .bar-wrapper {
+  height: 300px;
+  position: relative;
+}
+
+.mask .bar {
+  position: relative;
+  bottom: 0;
+  width: 5px;
+  display: inline-block;
+  border: 1px solid red;
+  height: 5px;
+  border-bottom: 3px solid #fff;
+}
+
+.box {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  margin: auto;
+  color: #fff;
+  background-color: rgba(1, 1, 1, 0.4);
+  z-index: 2;
+  overflow: hidden;
+}
+
+.box .top {
+  width: 800px;
+  height: 500px;
+  line-height: 30px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  bottom: 100px;
+  text-align: center;
+}
+
+.box .top .info-detail {
+  position: relative;
+  float: left;
+  width: 40%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate3d(-100%, 0, 0);
+  transition: transform 0.8s ease, opacity .8s ease;
+  opacity: 0;
+}
+
+.box .top .info-detail.active {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.box .top .info-detail .left {
+  width: 200px;
+  height: 200px;
+  margin: auto;
+  margin: 10px auto 0;
+  border-radius: 50%;
+  background-image: url("../img/mww.jpg");
+  background-repeat: no-repeat;
+  background-position: center 0px;
+  background-size: 200px;
+  animation-name: rotatew;
+  animation-timing-function: linear;
+  animation-duration: 2s;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes rotatew {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.box .top .info-detail .right {
+  width: 100%;
+  height: 45%;
+  margin-top: 30px;
+  text-align: center;
+  line-height: 50px;
+}
+
+.box .top .geci {
+  float: right;
+  width: 48%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  transition: left .8s ease;
+}
+
+.box .top .geci.active {
+  position: absolute;
+  left: 480px;
+}
+
+.box .top .geci .title {
+  font-size: 30px;
+  font-weight: 100;
+  line-height: 40px;
+}
+
+.box .top .geci .people {
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 40px;
+}
+
+.box .top .geci .lyric-box {
+  position: relative;
+  height: 400px;
+  overflow: hidden;
+}
+
+.box .top .geci .lyric-box .lyric {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 0;
+}
+
+.box .top .geci .lyric-box .lyric p {
+  height: 30px;
+  line-height: 30px;
+}
+
+.box .top .geci .lyric-box .lyric p.active {
+  color: orange;
+  font-size: 20px;
+}
+
+.box .bottom {
+  width: 100%;
+  height: 70px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 50;
+  background: url("../img/playbar.png") no-repeat 0 0px;
+  background-position: 0 -9px;
+  background-size: 230px;
+  background-repeat: repeat-x;
+}
+
+.box .bottom .bottom-content {
+  max-width: 980px;
+  height: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.box .bottom .bottom-content:after {
+  content: "";
+  clear: both;
+}
+
+.box .bottom .bottom-content .bofang {
+  margin: 0 10px;
+  padding: 10px 0;
+  width: 150px;
+  height: 50px;
+  float: left;
+}
+
+.box .bottom .bottom-content .bofang .left {
+  width: 45px;
+  height: 45px;
+  float: left;
+  cursor: pointer;
+  margin-right: 5px;
+  background: url("../img/playbar.png") no-repeat 5px -166px;
+  background-size: 200px;
+}
+
+.box .bottom .bottom-content .bofang .left:hover {
+  background: url("../img/playbar.png") no-repeat -35px -166px;
+  background-size: 200px;
+}
+
+.box .bottom .bottom-content .bofang .play {
+  width: 45px;
+  height: 45px;
+  float: left;
+  cursor: pointer;
+  margin-right: 5px;
+  background: url("../img/playbar.png") no-repeat -1px -270px;
+  background-size: 200px;
+}
+
+.box .bottom .bottom-content .bofang .play:hover {
+  background: url("../img/playbar.png") no-repeat -54px -270px;
+  background-size: 200px;
+}
+
+.box .bottom .bottom-content .bofang .play.pause {
+  background: url("../img/playbar.png") no-repeat -1px -218px;
+  background-size: 200px;
+}
+
+.box .bottom .bottom-content .bofang .play.pause:hover {
+  background: url("../img/playbar.png") no-repeat -54px -218px;
+  background-size: 200px;
+}
+
+.box .bottom .bottom-content .bofang .right {
+  cursor: pointer;
+  width: 45px;
+  height: 45px;
+  float: left;
+  margin-right: 5px;
+  background: url("../img/playbar.png") no-repeat;
+  background-position: right -55px top -166px;
+  background-size: 200px;
+}
+
+.box .bottom .bottom-content .bofang .right:hover {
+  background: url("../img/playbar.png") no-repeat;
+  background-position: right -15px top -166px;
+  background-size: 200px;
+}
+
+.box .bottom .bottom-content .info {
+  margin-top: 10px;
+  width: 50px;
+  height: 50px;
+  float: left;
+  background: url("../img/mww.jpg") no-repeat center center;
+  background-size: 50px;
+}
+
+.box .bottom .bottom-content .info:hover {
+  box-shadow: 0 0 2px 2px #fff;
+}
+
+.box .bottom .bottom-content .info a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.box .bottom .bottom-content .time {
+  padding: 8px 0;
+  width: 400px;
+  height: 54px;
+  float: left;
+  margin-left: 10px;
+  color: #fff;
+}
+
+.box .bottom .bottom-content .time .time-top {
+  width: 100%;
+  height: 20px;
+  line-height: 20px;
+  font-size: 12px;
+  overflow: hidden;
+}
+
+.box .bottom .bottom-content .time .time-bottom {
+  width: 100%;
+  height: 30px;
+  line-height: 38px;
+}
+
+.box .bottom .bottom-content .time .time-bottom .time-left {
+  width: 80px;
+  height: 30px;
+  float: left;
+  line-height: 38px;
+  font-size: 12px;
+}
+
+.box .bottom .bottom-content .time .time-bottom .time-left span {
+  float: left;
+}
+
+.box .bottom .bottom-content .time .time-bottom .time-right {
+  float: left;
+  width: 300px;
+  height: 8px;
+  margin-top: 16px;
+  line-height: 50px;
+  margin-left: 10px;
+  background: url("../img/statbar.png") right 0;
+  position: relative;
+  cursor: pointer;
+}
+
+.box .bottom .bottom-content .time .time-bottom .time-right .current-time {
+  width: 30px;
+  height: 10px;
+  position: absolute;
+  left: 0;
+  top: -16px;
+  text-align: center;
+  line-height: 10px;
+  font-size: 12px;
+  display: none;
+}
+
+.box .bottom .bottom-content .time .time-bottom .time-right .current-time.active {
+  display: block;
+}
+
+.box .bottom .bottom-content .time .time-bottom .time-right .run {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 8px;
+  border-radius: 4px;
+  background: red;
+  z-index: 5;
+  background: url("../img/statbar.png") left -66px;
+}
+
+.box .bottom .bottom-content .time .time-bottom .time-right .load {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 8px;
+  border-radius: 4px;
+  background: url("../img/statbar.png") right -30px;
+  transition: width .8s linear;
+}
+
+.box .bottom .bottom-content .time .time-bottom .time-right .move {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  position: absolute;
+  top: -6px;
+  left: -7px;
+  z-index: 10;
+  background: url("../img/iconall.png") -2px -252px;
+}
+
+.box .bottom .bottom-content .time .time-bottom .time-right .move:hover {
+  background: url("../img/iconall.png") -2px -282px;
+}
+
+.box .bottom .bottom-content .volume {
+  width: 200px;
+  height: 50px;
+  padding: 10px 0;
+  float: left;
+  margin-left: 10px;
+  text-align: center;
+}
+
+.box .bottom .bottom-content .volume .volume-logo {
+  width: 30px;
+  height: 30px;
+  float: left;
+  font-size: 12px;
+  padding: 10px 0;
+  margin-top: 5px;
+  cursor: pointer;
+  background: url("../img/playbar.png") no-repeat 0px -282px;
+  background-size: 175px;
+  background-origin: content-box;
+  background-clip: content-box;
+}
+
+.box .bottom .bottom-content .volume .volume-logo:hover {
+  background: url("../img/playbar.png") no-repeat -33px -282px;
+  background-size: 175px;
+  background-origin: content-box;
+  background-clip: content-box;
+}
+
+.box .bottom .bottom-content .volume .volume-logo.active {
+  background: url("../img/logo.png") no-repeat;
+  background-position: right -10px top -53px;
+  background-origin: content-box;
+  background-clip: content-box;
+  background-size: 175px;
+}
+
+.box .bottom .bottom-content .volume .volume-current {
+  float: left;
+  width: 140px;
+  height: 8px;
+  margin-top: 28px;
+  line-height: 50px;
+  background: url("../img/statbar.png") right 0;
+  margin-left: 5px;
+  position: relative;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.box .bottom .bottom-content .volume .volume-current .run {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 8px;
+  border-radius: 4px;
+  background: red;
+  z-index: 5;
+  background: url("../img/statbar.png") left -66px;
+}
+
+.box .bottom .bottom-content .volume .volume-current .move {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  position: absolute;
+  top: -6px;
+  left: 130px;
+  z-index: 10;
+  background: url("../img/iconall.png") -2px -252px;
+  cursor: pointer;
+}
+
+.box .bottom .bottom-content .volume .volume-current .move:hover {
+  background: url("../img/iconall.png") -2px -282px;
+}
+
+.box .bottom .bottom-content .style {
+  margin: 0 10px;
+  padding-top: 25px;
+  width: 30px;
+  height: 30px;
+  float: left;
+  cursor: pointer;
+  background: url("../img/playbar.png") no-repeat -3px -395px;
+  background-origin: content-box;
+  background-clip: content-box;
+  background-size: 175px;
+}
+
+.box .bottom .bottom-content .style:hover {
+  background: url("../img/playbar.png") no-repeat -37px -395px;
+  background-origin: content-box;
+  background-clip: content-box;
+  background-size: 175px;
+}
+
+.box .bottom .bottom-content .random {
+  margin: 0 10px;
+  padding-top: 25px;
+  width: 30px;
+  height: 30px;
+  float: left;
+  cursor: pointer;
+  background: url("../img/playbar.png") no-repeat -76px -285px;
+  background-origin: content-box;
+  background-clip: content-box;
+  background-size: 175px;
+}
+
+.box .bottom .bottom-content .random:hover {
+  background: url("../img/playbar.png") no-repeat -104px -285px;
+  background-origin: content-box;
+  background-clip: content-box;
+  background-size: 175px;
+}
+
+.box .bottom .bottom-content .Loop-once {
+  margin: 0 10px;
+  padding-top: 25px;
+  width: 30px;
+  height: 30px;
+  float: left;
+  cursor: pointer;
+  background: url("../img/playbar.png") no-repeat -76px -395px;
+  background-origin: content-box;
+  background-clip: content-box;
+  background-size: 175px;
+}
+
+.box .bottom .bottom-content .Loop-once:hover {
+  background: url("../img/playbar.png") no-repeat -106px -395px;
+  background-origin: content-box;
+  background-clip: content-box;
+  background-size: 175px;
+}
+
+.box .bottom .bottom-content .list-button {
+  margin: 0 10px;
+  padding-top: 25px;
+  width: 30px;
+  height: 30px;
+  float: left;
+  background: url("../img/logo.png") no-repeat;
+  background-position: right 0 top 12px;
+  background-clip: content-box;
+  background-size: 175px;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity .8s ease;
+}
+
+.box .bottom .bottom-content .list-button:hover {
+  opacity: 1;
+}
+
+.box .bottom .bottom-content .list {
+  z-index: 10;
+  display: none;
+  width: 80%;
+  max-height: 400px;
+  opacity: 0.9;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background: rgba(0, 0, 0, 0.9);
+  bottom: 70px;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+}
+
+.box .bottom .bottom-content .list.active {
+  display: block;
+}
+
+.box .bottom .bottom-content .list .list-top {
+  width: 100%;
+  height: 40px;
+  background: url("../img/list-top.png") repeat-x;
+  font-size: 16px;
+  line-height: 40px;
+  color: #ccc;
+}
+
+.box .bottom .bottom-content .list .list-top .listall {
+  float: left;
+  margin-left: 10px;
+  color: #fff;
+}
+
+.box .bottom .bottom-content .list .list-top .list-top-right {
+  float: right;
+}
+
+.box .bottom .bottom-content .list .list-top .list-top-right div {
+  width: 100px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.box .bottom .bottom-content .list .list-top .list-top-right .collect {
+  float: left;
+  margin-right: 5px;
+}
+
+.box .bottom .bottom-content .list .list-top .list-top-right .collect:hover {
+  color: #fff;
+}
+
+.box .bottom .bottom-content .list .list-top .list-top-right .collect:hover .img {
+  background: url("../img/playlist.png") no-repeat -18px -17px;
+}
+
+.box .bottom .bottom-content .list .list-top .list-top-right .collect .img {
+  float: left;
+  width: 25px;
+  height: 20px;
+  margin-top: 10px;
+  background: url("../img/playlist.png") no-repeat -18px 3px;
+}
+
+.box .bottom .bottom-content .list .list-top .list-top-right .del {
+  float: left;
+}
+
+.box .bottom .bottom-content .list .list-top .list-top-right .del:hover {
+  color: #fff;
+}
+
+.box .bottom .bottom-content .list .list-top .list-top-right .del:hover .img {
+  background: url("../img/playlist.png") no-repeat -40px -17px;
+}
+
+.box .bottom .bottom-content .list .list-top .list-top-right .del .img {
+  float: left;
+  width: 25px;
+  height: 20px;
+  margin-top: 10px;
+  background: url("../img/playlist.png") no-repeat -40px 3px;
+}
+
+.box .bottom .bottom-content .list .list-bottom {
+  width: 100%;
+  padding-bottom: 20px;
+  background: url("../img/list-bg.png") repeat-y;
+  border-bottom: 1px solid #000;
+}
+
+.box .bottom .bottom-content .list .list-bottom ul li {
+  width: 100%;
+  height: 29px;
+  border-bottom: 1px solid #88868b;
+  text-align: left;
+  line-height: 30px;
+  font-size: 14px;
+}
+
+.box .bottom .bottom-content .list .list-bottom ul li.active {
+  background-color: #000;
+  color: orange;
+}
+
+.box .bottom .bottom-content .list .list-bottom ul li:hover {
+  background-color: #000;
+  color: orange;
+}
+
+.box .bottom .bottom-content .list .list-bottom ul li:hover .function {
+  visibility: visible;
+}
+
+.box .bottom .bottom-content .list .list-bottom .animation {
+  width: 20px;
+  height: 20px;
+  float: left;
+  margin-right: 5px;
+  padding: 5px 5px;
+  transform: rotate(180deg);
+}
+
+.box .bottom .bottom-content .list .list-bottom .animation div {
+  width: 2px;
+  height: 10px;
+  background: orange;
+  float: left;
+  margin-right: 2px;
+  display: none;
+}
+
+.box .bottom .bottom-content .list .list-bottom .animation div.active {
+  display: block;
+}
+
+.box .bottom .bottom-content .list .list-bottom .songs {
+  width: 350px;
+  height: 100%;
+  float: left;
+  margin-right: 20px;
+}
+
+.box .bottom .bottom-content .list .list-bottom .songs.active {
+  color: orange;
+}
+
+.box .bottom .bottom-content .list .list-bottom .function {
+  visibility: hidden;
+  float: left;
+  margin-right: 20px;
+}
+
+.box .bottom .bottom-content .list .list-bottom .function .download {
+  float: left;
+  width: 20px;
+  height: 20px;
+  margin-top: 5px;
+  background: url("../img/playlist.png") -55px -45px;
+  margin-right: 5px;
+}
+
+.box .bottom .bottom-content .list .list-bottom .function .download:hover {
+  background: url("../img/playlist.png") -78px -45px;
+}
+
+.box .bottom .bottom-content .list .list-bottom .function .share {
+  float: left;
+  width: 20px;
+  height: 20px;
+  margin-top: 5px;
+  background: url("../img/playlist.png") 0px 5px;
+}
+
+.box .bottom .bottom-content .list .list-bottom .function .share:hover {
+  background: url("../img/playlist.png") 0px -15px;
+}
+
+.box .bottom .bottom-content .list .list-bottom .function .collect {
+  float: left;
+  width: 20px;
+  height: 20px;
+  margin-top: 5px;
+  background: url("../img/playlist.png") -20px 5px;
+}
+
+.box .bottom .bottom-content .list .list-bottom .function .collect:hover {
+  background: url("../img/playlist.png") -20px -15px;
+}
+
+.box .bottom .bottom-content .list .list-bottom .name {
+  width: 80px;
+  height: 100%;
+  float: left;
+  margin-right: 20px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.box .bottom .bottom-content .list .list-bottom .name:hover {
+  text-decoration: underline;
+}
+
+.box .bottom .bottom-content .list .list-bottom .name.active {
+  color: orange;
+}
+
+.box .bottom .bottom-content .list .list-bottom .alltime {
+  float: left;
+  width: 50px;
+  height: 100%;
+}
+
+.box .bottom .bottom-content .list .list-bottom .alltime.active {
+  color: orange;
+}
+
+.box .bottom .bottom-content .list .list-bottom .delone {
+  float: right;
+  margin-right: 5px;
+  width: 20px;
+  height: 20px;
+  margin-top: 5px;
+  background: url("../img/playlist.png") -50px 5px;
+}
+
+.box .bottom .bottom-content .list .list-bottom .delone:hover {
+  background: url("../img/playlist.png") -50px -15px;
+}
